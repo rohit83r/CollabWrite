@@ -8,6 +8,8 @@ import Table from '@tiptap/extension-table'
 import TableCell from '@tiptap/extension-table-cell'
 import TableHeader from '@tiptap/extension-table-header'
 import TableRow from '@tiptap/extension-table-row'
+import { Color } from '@tiptap/extension-color'
+import Highlight from "@tiptap/extension-highlight"
 import Image from '@tiptap/extension-image'
 import ImageResize from "tiptap-extension-resize-image"
 import Underline from '@tiptap/extension-underline'
@@ -59,6 +61,10 @@ export const Editor=()=>{
             Underline,
             FontFamily,
             TaskList,
+            Highlight.configure({
+                multicolor:true,
+            }),
+            Color,
             TaskItem.configure({
                 nested: true,
             }),
