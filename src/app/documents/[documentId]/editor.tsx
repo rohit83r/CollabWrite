@@ -17,6 +17,7 @@ import { useEditorState } from "@/store/use-editor-store";
 import FontFamily from '@tiptap/extension-font-family'
 import { TextStyle } from "@tiptap/extension-text-style";
 import Link from '@tiptap/extension-link'
+import TextAlign from '@tiptap/extension-text-align'
 
 
 
@@ -58,6 +59,9 @@ export const Editor=()=>{
         },
         extensions: [
             StarterKit,
+            TextAlign.configure({
+                types:["heading","paragraph"]
+            }),
             Link.configure({
                 openOnClick:false,
                 autolink:true,
