@@ -16,6 +16,7 @@ import Underline from '@tiptap/extension-underline'
 import { useEditorState } from "@/store/use-editor-store";
 import FontFamily from '@tiptap/extension-font-family'
 import { TextStyle } from "@tiptap/extension-text-style";
+import Link from '@tiptap/extension-link'
 
 
 
@@ -57,6 +58,12 @@ export const Editor=()=>{
         },
         extensions: [
             StarterKit,
+            Link.configure({
+                openOnClick:false,
+                autolink:true,
+                defaultProtocol:"https"
+            }),
+
             TextStyle,
             Underline,
             FontFamily,
