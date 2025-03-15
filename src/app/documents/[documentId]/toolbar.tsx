@@ -16,7 +16,7 @@ import {
 import {cn} from '@/lib/utils'
 import {type ColorResult,SketchPicker} from "react-color"
 import {type Level} from "@tiptap/extension-heading"
-import { useEditorState } from "@/store/use-editor-store";
+import { useEditorStore } from "@/store/use-editor-store";
 import {Separator} from "@/components/ui/separator";
 import {
     DropdownMenu,DropdownMenuContent,DropdownMenuTrigger,DropdownMenuItem
@@ -34,7 +34,7 @@ import {Button} from "@/components/ui/button";
 
 
 const LineHeightButton=()=>{
-    const {editor}=useEditorState();
+    const {editor}=useEditorStore();
     const lineHeights=[
         { label:"Default" , value:"normal" },
         { label:"Single" , value:"1" },
@@ -75,7 +75,7 @@ const LineHeightButton=()=>{
 
 
 const FontSizeButton=()=>{
-    const {editor}=useEditorState();
+    const {editor}=useEditorStore();
     const currentFontSize=editor?.getAttributes("textStyle").fontSize
         ?editor?.getAttributes("textStyle").fontSize.replace("px","")
         :"16";
@@ -167,7 +167,7 @@ const FontSizeButton=()=>{
 
 
 const ListButton=()=>{
-    const {editor}=useEditorState();
+    const {editor}=useEditorStore();
     const lists=[
         {
             label:"Bullet list",
@@ -221,7 +221,7 @@ const ListButton=()=>{
 
 
 const AlignButton=()=>{
-    const {editor}=useEditorState();
+    const {editor}=useEditorStore();
     const alignments=[
         {
             label:"Align Left",
@@ -282,7 +282,7 @@ const AlignButton=()=>{
 
 
 const ImageButton=()=>{
-    const {editor}=useEditorState();
+    const {editor}=useEditorStore();
     const [isDialogOpen, setIsDialogOpen] = useState(false);
     const [imageUrl,setImageUrl]=useState("");
 
@@ -366,7 +366,7 @@ const ImageButton=()=>{
 }
 
 const LinkButton=()=>{
-    const {editor}=useEditorState();
+    const {editor}=useEditorStore();
     const [value,setValue]=useState("");
 
     const onChange=(href:string)=>{
@@ -406,7 +406,7 @@ const LinkButton=()=>{
 }
 
 const HighlightColorButton=()=>{
-    const {editor}=useEditorState();
+    const {editor}=useEditorStore();
     const value =editor?.getAttributes('highlight').color || '#FFFFFF';
 
     const onChange =(color:ColorResult)=>{
@@ -437,7 +437,7 @@ const HighlightColorButton=()=>{
 
 
 const TextColorButton=()=>{
-    const {editor}=useEditorState();
+    const {editor}=useEditorStore();
     const value =editor?.getAttributes("textStyle").color || "#000000";
 
     const onChange =(color:ColorResult)=>{
@@ -467,7 +467,7 @@ const TextColorButton=()=>{
 
 
 const HeadingLevelButton=()=>{
-    const {editor}=useEditorState();
+    const {editor}=useEditorStore();
     const headings=[
         { label:"Normal text",value:0,fontSize:"16px"},
         { label:"Heading 1",value:1,fontSize:"32px"},
@@ -527,7 +527,7 @@ const HeadingLevelButton=()=>{
 }
 
 const FontFamilyButton =()=>{
-    const {editor}=useEditorState();
+    const {editor}=useEditorStore();
     const fonts=[
         {label:"Arial",value:"Arial"},
         {label:"Times New Roman",value:"Times New Roman"},
@@ -587,7 +587,7 @@ const ToolbarButton=({onClick,isActive,icon:Icon}:ToolbarButtonProps)=>{
 }
 
 export const Toolbar=()=>{
-    const {editor} = useEditorState();
+    const {editor} = useEditorStore();
     console.log("Toolbar editor:",{editor});
     const sections:{
         label:string;

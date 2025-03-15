@@ -13,7 +13,7 @@ import Highlight from "@tiptap/extension-highlight"
 import Image from '@tiptap/extension-image'
 import ImageResize from "tiptap-extension-resize-image"
 import Underline from '@tiptap/extension-underline'
-import { useEditorState } from "@/store/use-editor-store";
+import { useEditorStore } from "@/store/use-editor-store";
 import FontFamily from '@tiptap/extension-font-family'
 import { TextStyle } from "@tiptap/extension-text-style";
 import Link from '@tiptap/extension-link'
@@ -28,7 +28,7 @@ import {Ruler} from "./ruler";
 
 export const Editor=()=>{
 
-    const {setEditor} = useEditorState();
+    const {setEditor} = useEditorStore();
     const editor = useEditor({
         immediatelyRender:false,
         onCreate({editor}){

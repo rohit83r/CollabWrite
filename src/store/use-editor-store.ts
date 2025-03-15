@@ -6,7 +6,7 @@ interface EditorState{
     setEditor :(editor:Editor | null) => void;
 }
 
-export const useEditorState = create<EditorState>((set)=>({
+export const useEditorStore = create<EditorState>((set)=>({
     editor: null,
     setEditor: (editor) => set({editor}),
 }));
