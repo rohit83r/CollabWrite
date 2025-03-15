@@ -18,6 +18,7 @@ import {
     TrashIcon, UnderlineIcon, Undo2Icon
 } from "lucide-react";
 import {BsFilePdf} from "react-icons/bs";
+import {OrganizationSwitcher, UserButton} from "@clerk/clerk-react";
 
 
 export const Navbar=()=>{
@@ -192,6 +193,15 @@ export const Navbar=()=>{
                     </div>
 
                 </div>
+            </div>
+            <div className="flex gap-3 items-center ">
+                <OrganizationSwitcher
+                    afterCreateOrganizationUrl='/'
+                    afterLeaveOrganizationUrl='/'
+                    afterSelectOrganizationUrl='/'
+                    afterSelectPersonalUrl='/'
+                />
+                <UserButton/>
             </div>
         </nav>
     );

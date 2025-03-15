@@ -8,6 +8,7 @@ import {useState} from "react";
 import {Input} from "@/components/ui/input";
 import {Button} from"./ui/button"
 import {string} from "zod";
+import {toast} from "sonner";
 
 interface RenameDialogProps {
     documentId: Id<"documents">;
@@ -29,6 +30,8 @@ export const RenameDialog = ({documentId,initialTitle,children}: RenameDialogPro
         setIsUpdating(true);
 
         update({ id:documentId,title:title.trim() || "undefined"})
+            .catch(()=>toast.error("An error occurred."))
+            .then(()=>toast.success("Document renamed"))
 
             .finally(()=>{
                 setIsUpdating(false);
