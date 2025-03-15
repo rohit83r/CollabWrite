@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import {SearchInput} from "@/app/(home)/search-input";
+import {UserButton} from "@clerk/clerk-react";
 
 
 export const Navbar=()=>{
@@ -15,7 +16,7 @@ export const Navbar=()=>{
                 </h3>
             </div>
             <SearchInput/>
-            <div/>
+            <UserButton/>
 
         </nav>
     )

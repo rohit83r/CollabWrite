@@ -6,4 +6,4 @@ export function useSearchParam(){
         parseAsString.withDefault("").withOptions({clearOnDefault:true}),
 
     );
-};
+}
