@@ -43,7 +43,7 @@ const LineHeightButton=()=>{
         { label:"Double" , value:"2" }
     ];
     return(
-        <DropdownMenu>
+        <DropdownMenu >
             <DropdownMenuTrigger asChild>
                 <button
                     className="h-7 min-w-7 shrink-0 flex flex-col items-center justify-center rounded-sm hover:bg-neutral-200/80 px-1.5 overflow-hidden text-sm"

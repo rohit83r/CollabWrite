@@ -7,7 +7,6 @@ import {api} from "../../convex/_generated/api";
 import {useState} from "react";
 import {Input} from "@/components/ui/input";
 import {Button} from"./ui/button"
-import {string} from "zod";
 import {toast} from "sonner";
 
 interface RenameDialogProps {
