@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import {DocumentInput} from "./document-input";
 import {useEditorStore} from "@/store/use-editor-store"
-
+import {Avatars} from "./avatars"
 import {Menubar,MenubarItem,MenubarContent,MenubarMenu,MenubarSeparator,MenubarShortcut,MenubarTrigger,MenubarSub,MenubarSubTrigger,MenubarSubContent} from "@/components/ui/menubar"
 import {
     BoldIcon,
@@ -195,6 +195,7 @@ export const Navbar=()=>{
                 </div>
             </div>
             <div className="flex gap-3 items-center ">
+                <Avatars/>
                 <OrganizationSwitcher
                     afterCreateOrganizationUrl='/'
                     afterLeaveOrganizationUrl='/'

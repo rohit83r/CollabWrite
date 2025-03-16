@@ -23,10 +23,15 @@ import {FontSizeExtension} from "@/extensions/font-size";
 import {LineHeightExtension} from "@/extensions/line-height";
 
 
+import { useLiveblocksExtension, FloatingToolbar } from "@liveblocks/react-tiptap";
+
+
 import {Ruler} from "./ruler";
+import {Threads} from "@/app/documents/[documentId]/threads";
 
 
 export const Editor=()=>{
+    const liveblocks=useLiveblocksExtension();
 
     const {setEditor} = useEditorStore();
     const editor = useEditor({
@@ -64,7 +69,9 @@ export const Editor=()=>{
             },
         },
         extensions: [
-            StarterKit,
+            StarterKit.configure({
+                history: false
+            }),
             FontSizeExtension,
             LineHeightExtension.configure({
                 types: ["heading", "paragraph"],
@@ -99,6 +106,7 @@ export const Editor=()=>{
             TableRow,
             TableHeader,
             TableCell,
+            liveblocks
         ],
         content: `
         <div>Hello world</div>
@@ -109,6 +117,7 @@ export const Editor=()=>{
            <Ruler />
             <div className="min-w-max flex justify-center w-[816px] py-4 print:py-0 mx-auto print:w-full print:min-w-0">
                <EditorContent editor={editor} />
+                <Threads editor={editor}/>
            </div>
 
         </div>
